@@ -19,7 +19,8 @@ def generate_prompts(num_folds, sample):
                 for string in other_fold:
                     prompt += string + "\n"
         prompt += ("Now, you will receive a sequence of individuals with attributes. "
-                   "Respond by predicting each of their credit scores, and nothing else.\n")
+                   "Respond by predicting each of their credit scores. Write these as sequential numbers separated by commas, such as"
+                   "x,y,z. Generate absolutely nothing else.\n")
         for string in fold:
             lines = string.splitlines()
             temp_lines = lines[:-1]
