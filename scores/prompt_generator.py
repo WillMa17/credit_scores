@@ -104,7 +104,7 @@ def generate_prompts_inference(sample, index_test):
         temp_lines = lines[:-1]
         temp_string = "\n".join(temp_lines)
         query += temp_string + "\n"
-        target += lines[-1][-3:] + "\n"
+        target += lines[-1][-3:] + ","
         prompt_wrapper.append(query)
     query = ("Now, given this individual with values corresponding to each of the attributes above, predict their credit score. "
         "Your output should be only a 3 digit number, such as xyz, and nothing else.")
@@ -112,7 +112,7 @@ def generate_prompts_inference(sample, index_test):
     temp_lines = lines_target[:-1]
     temp_string = "\n".join(temp_lines)
     query += temp_string + f"\n"
-    target += lines_target[-1][-3:] + "\n"
+    target += lines_target[-1][-3:]
     prompt_wrapper.append(query)
     return prompt_wrapper, target
 
