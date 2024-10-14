@@ -7,6 +7,7 @@ def interval_calculator(llm):
     successes_inference = 0
     intervals_kfolds = []
     intervals_inference = []
+    num_test = 38
     for i in range(num_test):
         distribution = []
         neg_distribution = []
@@ -48,6 +49,7 @@ def interval_calculator(llm):
             successes_inference += 1
         intervals_inference.append((lower_quantile, upper_quantile))
     return successes_kfolds / num_test, successes_inference / num_test, intervals_kfolds, intervals_inference
+
 
 
 
